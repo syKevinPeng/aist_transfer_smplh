@@ -27,7 +27,7 @@ from omegaconf import OmegaConf
 from .defaults import conf as default_conf
 
 
-def parse_args(argv=None) -> OmegaConf:
+def parse_args(my_configs) -> OmegaConf:
     arg_formatter = argparse.ArgumentDefaultsHelpFormatter
 
     description = 'Model transfer script'
@@ -43,9 +43,6 @@ def parse_args(argv=None) -> OmegaConf:
     cmd_args = parser.parse_args()
 
     cfg = default_conf.copy()
-    if cmd_args.exp_cfg:
-        cfg.merge_with(OmegaConf.load(cmd_args.exp_cfg))
-    if cmd_args.exp_opts:
-        cfg.merge_with(OmegaConf.from_cli(cmd_args.exp_opts))
-
+    if my_configs:
+        cfg.merge_with(OmegaConf.load(my_configs))
     return cfg
