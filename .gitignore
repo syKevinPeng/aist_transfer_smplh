@@ -1,4 +1,6 @@
 transfer_data/*
+slrum-output/*
+
 *.pyc
 __pycache__/
 *.pyo
