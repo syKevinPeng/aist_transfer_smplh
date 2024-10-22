@@ -1,6 +1,6 @@
 transfer_data/*
 slrum-output/*
-
+__pycache__/*
 *.pyc
 __pycache__/
 *.pyo
@@ -39,3 +39,4 @@ develop-eggs/
 .pytest_cache/
 nosetests.xml
 coverage.xml
+__pycache__/transfer_model.cpython-38.pyc
