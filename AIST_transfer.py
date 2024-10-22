@@ -143,6 +143,7 @@ class SMPLtoSMPLH:
         for file in batch_file_list:
             if (self.output_folder / file.stem).exists():
                 # if the file exists, remove it from the list
+                logger.info(f"File {file.stem} already exists. Skipping...")
                 batch_file_list.remove(file)
         if len(batch_file_list) == 0:
             logger.info("All files in the batch already exist. Skipping...")
@@ -170,7 +171,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # check how many split
-    file_list = [f for f in Path(input_folder).iterdir() if f.is_dir()].sort()
+    file_list = sorted([f for f in Path(input_folder).iterdir() if f.is_dir()])
     batch_size = 15
     num_batches = len(file_list) // batch_size
     print(f"There are {len(file_list)} files")

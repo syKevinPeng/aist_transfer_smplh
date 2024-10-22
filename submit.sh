@@ -16,5 +16,5 @@ conda activate physicsfall
 
 # Run the script
 # siyuan: 0(running 3240814),1 (running),2, 3, 4, 5
-# Seong: 6,7,8,9
+# Seong: 6,7,8
 python AIST_transfer.py --batch_num 1
