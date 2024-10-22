@@ -1,0 +1,25 @@
+datasets:
+    mesh_folder:
+        data_folder: '/fs/nexus-projects/PhysicsFall/data/AIST++/SMPL_meshes/gBR_sBM_cAll_d04_mBR0_ch01'
+deformation_transfer_path: 'transfer_data/smpl2smplh_def_transfer.pkl'
+mask_ids_fname: ''
+summary_steps: 100
+
+edge_fitting:
+    per_part: False
+
+optim:
+    type: 'trust-ncg'
+    maxiters: 100
+    gtol: 1e-06
+
+body_model:
+    model_type: "smplh"
+    # SMPL+H has no neutral model, so we have to manually select the gender
+    gender: "neutral"
+    # gender: "male"
+    folder: "/fs/nexus-projects/PhysicsFall/data/smpl/models"
+    use_compressed: False
+    smplh:
+        betas:
+            num: 16
